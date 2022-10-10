@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:marina_mobility/core/bindings/initial_bindings.dart';
 import 'package:marina_mobility/core/routes/app_pages.dart';
@@ -20,13 +23,25 @@ class _MyAppState extends State<MyApp>{
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-      child: GetMaterialApp(
-        debugShowCheckedModeBanner: false,
-        initialRoute: AppRoutes.splashScreen,
-        getPages: AppPages.list,
-        initialBinding: InitialBindings(),
-      ),
+      child: Platform.isAndroid ? getMaterialApp() : getCupertinoApp(),
     );
   }
 
+  GetMaterialApp getMaterialApp(){
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      initialRoute: AppRoutes.splashScreen,
+      getPages: AppPages.list,
+      initialBinding: InitialBindings(),
+    );
+  }
+
+  GetCupertinoApp getCupertinoApp(){
+    return GetCupertinoApp(
+      debugShowCheckedModeBanner: false,
+      initialRoute: AppRoutes.splashScreen,
+      getPages: AppPages.list,
+      initialBinding: InitialBindings(),
+    );
+  }
 }
