@@ -10,14 +10,6 @@ class LoginViewModel extends GetxController with BaseLoginViewModel{
 
   LoginViewModel(this._loginUseCase);
 
-
-  @override
-  void dispose() {
-    super.dispose();
-    usernameController.dispose();
-    passwordController.dispose();
-  }
-
   @override
   void login() async{
     (await _loginUseCase.execute(LoginRequest(username: usernameController.text, password: passwordController.text)))
@@ -26,6 +18,13 @@ class LoginViewModel extends GetxController with BaseLoginViewModel{
     }, (userObj){
 
     });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    usernameController.dispose();
+    passwordController.dispose();
   }
 }
 

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:marina_mobility/core/bindings/initial_bindings.dart';
+import 'package:marina_mobility/core/extensions.dart';
 import 'package:marina_mobility/core/routes/app_pages.dart';
 import 'package:marina_mobility/core/routes/app_routes.dart';
 

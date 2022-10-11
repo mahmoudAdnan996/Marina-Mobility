@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:marina_mobility/data/network/base_api_client_service.dart';
 import 'package:http/http.dart' as http;
-import 'package:marina_mobility/data/network/exceptions.dart';
+import 'package:marina_mobility/data/data_source/remote_data_source/base_api_client_service.dart';
+import 'package:marina_mobility/data/data_source/remote_data_source/exceptions.dart';
 
 const String applicationJson = "application/json";
 const String contentType = "content-type";

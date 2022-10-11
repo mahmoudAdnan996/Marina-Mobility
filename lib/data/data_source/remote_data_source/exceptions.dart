@@ -1,4 +1,3 @@
-import 'package:marina_mobility/data/models/responses/failure.dart';
 
 class AppException implements Exception {
   final _message;
